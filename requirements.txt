@@ -1,0 +1,8 @@
+﻿# MongoDB Driver
+pymongo==4.17.0
+
+# Apache Spark / PySpark
+pyspark==4.2.0
+
+# Testing
+pytest>=8.0

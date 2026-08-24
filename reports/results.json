@@ -1,0 +1,19 @@
+{
+    "run_id": "4a05b64c-63ba-4a80-b3d7-aab679da2b5f",
+    "file_name": "update_test.csv",
+    "file_size_mb": 0.0,
+    "used_engine": "python_batch",
+    "read_rows": 1,
+    "loaded_raw": 1,
+    "count_valid": 1,
+    "count_corrected": 0,
+    "count_quarantine": 0,
+    "seconds_elapsed": 0.25,
+    "throughput": 3.93,
+    "batch_size": 5000,
+    "count_error_cases": {},
+    "count_inserted": 0,
+    "count_updated": 1,
+    "count_unchanged": 0,
+    "consistency_ok": true
+}

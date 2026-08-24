@@ -1,0 +1,27 @@
+{
+    "run_id": "46d93895-8d67-4aea-b54f-e5d5acc2cb36",
+    "source_file": "D:\\midterm-data-pipeline\\data\\orders_small_sample.csv",
+    "used_engine": "pyspark",
+    "raw_count": 100000,
+    "count_valid": 74738,
+    "count_corrected": 16985,
+    "count_quarantine": 8277,
+    "input_partitions": 2,
+    "count_inserted_estimated": 0,
+    "count_replaced_existing": 91723,
+    "count_error_cases": {
+        "UNKNOWN_STATUS": 718,
+        "EMPTY_ITEMS": 677,
+        "INVALID_EMAIL": 1343,
+        "DUPLICATE_ORDER_ID": 1333,
+        "UNKNOWN_CURRENCY": 713,
+        "MISSING_CUSTOMER_ID": 1411,
+        "CORRUPTED_ITEMS_JSON": 1338,
+        "INVALID_DATE": 722,
+        "TOTAL_CANNOT_BE_CALCULATED": 683,
+        "MISSING_ORDER_ID": 721
+    },
+    "seconds_elapsed": 694.61,
+    "throughput": 143.97,
+    "consistency_ok": true
+}

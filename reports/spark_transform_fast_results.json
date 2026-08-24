@@ -1,0 +1,28 @@
+{
+    "run_id": "793867cd-f655-4e3b-8362-aa3bdcadbd5f",
+    "source_file": "D:\\orders_huge_mixed_quality.csv",
+    "engine": "pyspark_fast",
+    "raw_count": 30000000,
+    "valid": 22406175,
+    "corrected": 5090034,
+    "quarantine": 2503791,
+    "input_partitions": 214,
+    "inserted": 27404791,
+    "updated": 91418,
+    "unchanged": 0,
+    "error_counts": {
+        "EMPTY_ITEMS": 209934,
+        "UNKNOWN_CURRENCY": 210190,
+        "MISSING_CUSTOMER_ID": 419474,
+        "DUPLICATE_ORDER_ID": 417584,
+        "INVALID_EMAIL": 418709,
+        "UNKNOWN_STATUS": 210194,
+        "TOTAL_CANNOT_BE_CALCULATED": 210018,
+        "CORRUPTED_ITEMS_JSON": 419906,
+        "MISSING_ORDER_ID": 209392,
+        "INVALID_DATE": 210524
+    },
+    "elapsed_seconds": 7282.04,
+    "throughput_rows_per_sec": 4119.73,
+    "consistency": true
+}

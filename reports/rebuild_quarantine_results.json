@@ -1,0 +1,22 @@
+{
+    "run_id": "793867cd-f655-4e3b-8362-aa3bdcadbd5f",
+    "source_file": "D:\\orders_huge_mixed_quality.csv",
+    "operation": "rebuild_quarantine_only",
+    "input_partitions": 214,
+    "expected_quarantine": 2503791,
+    "actual_quarantine": 2503791,
+    "matches_expected": true,
+    "error_counts": {
+        "INVALID_EMAIL": 418709,
+        "MISSING_CUSTOMER_ID": 419474,
+        "UNKNOWN_STATUS": 210194,
+        "DUPLICATE_ORDER_ID": 417584,
+        "INVALID_DATE": 210524,
+        "EMPTY_ITEMS": 209934,
+        "CORRUPTED_ITEMS_JSON": 419906,
+        "UNKNOWN_CURRENCY": 210190,
+        "TOTAL_CANNOT_BE_CALCULATED": 210018,
+        "MISSING_ORDER_ID": 209392
+    },
+    "elapsed_seconds": 2467.13
+}

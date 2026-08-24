@@ -1,0 +1,11 @@
+{
+    "run_id": "793867cd-f655-4e3b-8362-aa3bdcadbd5f",
+    "file_name": "orders_huge_mixed_quality.csv",
+    "file_size_mb": 12650.32,
+    "used_engine": "pyspark",
+    "read_rows": 30000000,
+    "loaded_raw": 30000000,
+    "input_partitions": 99,
+    "seconds_elapsed": 382.23,
+    "throughput": 78487.73
+}
