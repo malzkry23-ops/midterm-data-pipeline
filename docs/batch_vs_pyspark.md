@@ -176,3 +176,26 @@ PySpark هو الخيار الأنسب للملفات الكبيرة لأنه ي
 - Performance
 - Memory Efficiency
 - Scalability
+
+---
+
+## Why 200 MB Threshold?
+
+تم اختيار 200 MB كحد عملي في هذا المشروع للفصل بين المسار الخفيف والمسار الموزع.
+
+السبب:
+
+- الملفات الصغيرة لا تحتاج Spark overhead.
+- Python Batch يستطيع معالجتها بكفاءة باستخدام Streaming Batches.
+- الملفات الأكبر تستفيد أكثر من Parallel Processing وSpark Partitions.
+- الحد قابل للتعديل من config/settings.py وليس قيمة ثابتة داخل منطق البرنامج.
+
+هذا الحد هو قرار هندسي خاص ببيئة الاختبار الحالية، وليس قاعدة عامة لجميع الأنظمة.
+
+في بيئة Production يمكن تحديده بناءً على:
+
+- Available RAM
+- CPU cores
+- Dataset structure
+- Required processing time
+- Cluster resources
