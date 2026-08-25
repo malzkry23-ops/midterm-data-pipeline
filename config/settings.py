@@ -27,3 +27,17 @@ PYTHON_EXECUTABLE = (
 
 # العينة الصغيرة
 DEFAULT_SAMPLE_ROWS = 100000
+
+# =========================================================
+# بيئة Spark على جهاز المناقشة
+# =========================================================
+
+JAVA_HOME = (
+    r"C:\Program Files\Eclipse Adoptium"
+    r"\jdk-17.0.20.8-hotspot"
+)
+
+SPARK_HOME = (
+    r"C:\Users\Hp\AppData\Local\Programs"
+    r"\Python\Python313\Lib\site-packages\pyspark"
+)

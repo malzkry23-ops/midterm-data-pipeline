@@ -414,3 +414,31 @@ Important result files are stored inside reports/:
 Large CSV files, MongoDB database files, Spark temporary files and cache files must not be uploaded to GitHub.
 
 The repository contains source code, configuration, tests, reports, documentation and screenshots.
+
+---
+
+## Presentation GUI
+
+A desktop GUI is included for practical demonstration.
+
+Run:
+
+python src\gui.py
+
+The interface allows the examiner to:
+
+- Select any CSV file.
+- View file size.
+- See the automatically selected engine.
+- Start the full ELT pipeline.
+- View RAW, VALID, CORRECTED and QUARANTINE counts.
+- View INSERTED, UPDATED and UNCHANGED counts.
+- View Consistency, Run ID and execution time.
+
+Demo execution results are written to:
+
+reports/latest_run.json
+
+The official full-project results remain stored in:
+
+reports/results.json

@@ -69,6 +69,13 @@ def process_run(run_id):
     db = client[DATABASE_NAME]
 
     raw = db[RAW_COLLECTION]
+
+    # Index ?????? ????? ??? Run ID
+    raw.create_index(
+        [("run_id", 1)],
+        name="run_id_1"
+    )
+
     validated = db[VALIDATED_COLLECTION]
     quarantine = db[QUARANTINE_COLLECTION]
 
@@ -82,13 +89,7 @@ def process_run(run_id):
     )
 
     # منع تكرار سجل Quarantine عند إعادة نفس التشغيل
-    quarantine.create_index(
-        [
-            ("run_id", 1),
-            ("source_row_number", 1)
-        ],
-        unique=True
-    )
+
 
     # -----------------------------------------------------
     # عدادات
@@ -528,7 +529,7 @@ def process_run(run_id):
         report_file = (
             project_root
             / "reports"
-            / "results.json"
+            / "latest_run.json"
         )
 
         with open(
