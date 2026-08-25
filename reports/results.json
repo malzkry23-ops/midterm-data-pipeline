@@ -1,19 +1,117 @@
 {
-    "run_id": "4a05b64c-63ba-4a80-b3d7-aab679da2b5f",
-    "file_name": "update_test.csv",
-    "file_size_mb": 0.0,
-    "used_engine": "python_batch",
-    "read_rows": 1,
-    "loaded_raw": 1,
-    "count_valid": 1,
-    "count_corrected": 0,
-    "count_quarantine": 0,
-    "seconds_elapsed": 0.25,
-    "throughput": 3.93,
+  "project": "Hybrid Big Data ELT Pipeline",
+  "router": {
+    "threshold_mb": 200,
+    "small_file_engine": "python_batch",
+    "large_file_engine": "pyspark",
+    "small_file_size_mb": 41.77,
+    "large_file_size_mb": 12650.32
+  },
+
+  "python_batch_raw_load": {
+    "source_file": "orders_small_sample.csv",
+    "file_size_mb": 41.77,
+    "read_rows": 100000,
     "batch_size": 5000,
-    "count_error_cases": {},
-    "count_inserted": 0,
-    "count_updated": 1,
-    "count_unchanged": 0,
-    "consistency_ok": true
+    "batches": 20,
+    "elapsed_seconds": 4.57,
+    "throughput_rows_per_sec": 21881.84,
+    "engine": "python_batch"
+  },
+
+  "python_batch_quality_run": {
+    "run_id": "46d93895-8d67-4aea-b54f-e5d5acc2cb36",
+    "raw_count": 100000,
+    "valid": 75242,
+    "corrected": 17108,
+    "quarantine": 7650,
+    "inserted": 92350,
+    "updated": 0,
+    "unchanged": 0,
+    "elapsed_seconds": 164.70,
+    "consistency": true
+  },
+
+  "idempotency_test": {
+    "run_id": "46d93895-8d67-4aea-b54f-e5d5acc2cb36",
+    "same_input_processed_again": true,
+    "inserted": 0,
+    "updated": 0,
+    "unchanged": 92350,
+    "consistency": true
+  },
+
+  "upsert_update_test": {
+    "run_id": "4a05b64c-63ba-4a80-b3d7-aab679da2b5f",
+    "source_file": "update_test.csv",
+    "read_rows": 1,
+    "inserted": 0,
+    "updated": 1,
+    "duplicate_created": false,
+    "consistency": true
+  },
+
+  "pyspark_raw_load": {
+    "run_id": "793867cd-f655-4e3b-8362-aa3bdcadbd5f",
+    "source_file": "D:\\orders_huge_mixed_quality.csv",
+    "file_size_mb": 12650.32,
+    "read_rows": 30000000,
+    "loaded_raw": 30000000,
+    "partitions": 99,
+    "elapsed_seconds": 382.23,
+    "throughput_rows_per_sec": 78487.73,
+    "engine": "pyspark",
+    "fixed_schema": true,
+    "mongodb_spark_connector": true
+  },
+
+  "pyspark_quality_run": {
+    "run_id": "793867cd-f655-4e3b-8362-aa3bdcadbd5f",
+    "raw_count": 30000000,
+    "valid": 22406175,
+    "corrected": 5090034,
+    "quarantine": 2503791,
+    "input_partitions": 214,
+    "inserted": 27404791,
+    "updated": 91418,
+    "unchanged": 0,
+    "elapsed_seconds": 7282.04,
+    "throughput_rows_per_sec": 4119.73,
+    "consistency": true,
+
+    "error_counts": {
+      "CORRUPTED_ITEMS_JSON": 419906,
+      "MISSING_CUSTOMER_ID": 419474,
+      "INVALID_EMAIL": 418709,
+      "DUPLICATE_ORDER_ID": 417584,
+      "INVALID_DATE": 210524,
+      "UNKNOWN_STATUS": 210194,
+      "UNKNOWN_CURRENCY": 210190,
+      "TOTAL_CANNOT_BE_CALCULATED": 210018,
+      "EMPTY_ITEMS": 209934,
+      "MISSING_ORDER_ID": 209392
+    }
+  },
+
+  "quarantine_rebuild_verification": {
+    "expected_quarantine": 2503791,
+    "actual_quarantine": 2503791,
+    "match": true
+  },
+
+  "final_consistency": {
+    "raw": 30000000,
+    "valid": 22406175,
+    "corrected": 5090034,
+    "quarantine": 2503791,
+    "total_classified": 30000000,
+    "formula": "valid + corrected + quarantine = raw",
+    "consistency": true
+  },
+
+  "automated_tests": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0
+  }
 }
