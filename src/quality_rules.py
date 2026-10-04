@@ -246,6 +246,18 @@ def clean_row(row):
 
     data["customer_phone"] = new_phone
 
+    # Validate normalized phone length
+    phone_digits = re.sub(
+        r"\D",
+        "",
+        new_phone
+    )
+
+    if len(phone_digits) < 9:
+        errors.append(
+            "PHONE_INVALID"
+        )
+
 
     # =====================================================
     # 8- توحيد التاريخ
@@ -399,6 +411,86 @@ def clean_row(row):
     # 11- إعادة حساب إجمالي الطلب
     # مجموع العناصر + تكلفة التوصيل
     # =====================================================
+
+    # Validate fields inside items_json
+    if isinstance(items, list):
+
+        items_changed = False
+
+        for item_index, item in enumerate(items):
+
+            if not isinstance(item, dict):
+                errors.append(
+                    "CORRUPTED_ITEMS_JSON"
+                )
+                continue
+
+            # SKU must exist
+            sku = item.get("sku")
+
+            if (
+                sku is None
+                or not str(sku).strip()
+            ):
+                errors.append(
+                    "ITEM_SKU_MISSING"
+                )
+
+            # Read quantity
+            qty = item.get("qty")
+
+            # Convert string quantity to numeric
+            if isinstance(qty, str):
+
+                try:
+                    numeric_qty = float(
+                        qty.strip()
+                    )
+
+                    if numeric_qty.is_integer():
+                        numeric_qty = int(
+                            numeric_qty
+                        )
+
+                    add_correction(
+                        corrections,
+                        f"items_json[{item_index}].qty",
+                        qty,
+                        numeric_qty,
+                        "QTY_STRING_TO_NUMERIC"
+                    )
+
+                    item["qty"] = numeric_qty
+                    qty = numeric_qty
+                    items_changed = True
+
+                except (
+                    ValueError,
+                    TypeError
+                ):
+                    pass
+
+            # Negative quantity is unsafe
+            try:
+
+                if float(qty) < 0:
+                    errors.append(
+                        "VALUE_NEGATIVE_AMBIGUOUS"
+                    )
+
+            except (
+                ValueError,
+                TypeError
+            ):
+                pass
+
+        if items_changed:
+
+            data["items_json"] = json.dumps(
+                items,
+                ensure_ascii=False
+            )
+
 
     if items:
 

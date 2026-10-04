@@ -15,7 +15,8 @@ from quality_rules import clean_row
 # =========================================================
 
 MONGO_URI = "mongodb://localhost:27017"
-DATABASE_NAME = "midterm_pipeline"
+from os import getenv
+DATABASE_NAME = getenv("DATABASE_NAME", "midterm_pipeline")
 
 RAW_COLLECTION = "orders_raw"
 VALIDATED_COLLECTION = "orders_validated"

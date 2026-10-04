@@ -8,7 +8,8 @@ from pymongo import MongoClient
 
 # إعدادات MongoDB
 MONGO_URI = "mongodb://localhost:27017"
-DATABASE_NAME = "midterm_pipeline"
+from os import getenv
+DATABASE_NAME = getenv("DATABASE_NAME", "midterm_pipeline")
 COLLECTION_NAME = "orders_raw"
 
 # عدد السجلات في كل دفعة

@@ -29,7 +29,8 @@ from pyspark.sql.types import (
 
 MONGO_URI = "mongodb://127.0.0.1:27017"
 
-DATABASE_NAME = "midterm_pipeline"
+from os import getenv
+DATABASE_NAME = getenv("DATABASE_NAME", "midterm_pipeline")
 
 RAW_COLLECTION = "orders_raw"
 
