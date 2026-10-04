@@ -1,0 +1,43 @@
+{
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "indexes": [
+    {
+      "name": "idx_city",
+      "keys": [
+        [
+          "record.city",
+          1
+        ]
+      ],
+      "reason": "Speeds up orders_by_city query.",
+      "creation_time_seconds": 0.01
+    },
+    {
+      "name": "idx_customer_id",
+      "keys": [
+        [
+          "record.customer_id",
+          1
+        ]
+      ],
+      "reason": "Speeds up orders_by_customer query.",
+      "creation_time_seconds": 0.0
+    },
+    {
+      "name": "idx_status_order_date",
+      "keys": [
+        [
+          "record.status",
+          1
+        ],
+        [
+          "record.order_date",
+          1
+        ]
+      ],
+      "reason": "Compound index for filtering by status and date range while supporting date sorting.",
+      "creation_time_seconds": 0.0
+    }
+  ]
+}

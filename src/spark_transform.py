@@ -30,7 +30,15 @@ RAW_COLLECTION = "orders_raw"
 VALIDATED_COLLECTION = "orders_validated"
 QUARANTINE_COLLECTION = "quarantine_orders"
 
-SPARK_TEMP = r"D:\spark-temp"
+SPARK_TEMP = os.environ.get(
+    "SPARK_TEMP",
+    os.path.join(
+        os.environ.get("TEMP")
+        or os.environ.get("TMP")
+        or ".",
+        "midterm-spark-temp"
+    )
+)
 
 
 # =========================================================

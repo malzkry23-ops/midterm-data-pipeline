@@ -30,13 +30,22 @@ RAW_COLLECTION = "orders_raw"
 
 QUARANTINE_COLLECTION = "quarantine_orders"
 
-SPARK_TEMP = r"D:\spark-temp"
+SPARK_TEMP = os.environ.get(
+    "SPARK_TEMP",
+    os.path.join(
+        os.environ.get("TEMP")
+        or os.environ.get("TMP")
+        or ".",
+        "midterm-spark-temp"
+    )
+)
 
 
 # Python المستخدم مع Spark على Windows
 PYTHON_EXECUTABLE = (
-    r"C:\Users\Hp\AppData\Local\Programs"
-    r"\Python\Python313\python.exe"
+    os.environ.get("PYSPARK_PYTHON")
+    or os.environ.get("PYTHON_EXECUTABLE")
+    or sys.executable
 )
 
 

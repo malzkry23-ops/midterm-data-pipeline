@@ -1,0 +1,13 @@
+{
+  "query_name": "orders_by_customer",
+  "phase": "after_indexes",
+  "nReturned": 1,
+  "executionTimeMillis": 1,
+  "totalKeysExamined": 1,
+  "totalDocsExamined": 1,
+  "winning_plan_stages": [
+    "LIMIT",
+    "FETCH",
+    "IXSCAN"
+  ]
+}

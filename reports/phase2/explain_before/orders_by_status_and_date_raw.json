@@ -1,0 +1,172 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "midterm_pipeline.orders_validated",
+    "parsedQuery": {
+      "$and": [
+        {
+          "record.status": {
+            "$eq": "قيد الشحن"
+          }
+        },
+        {
+          "record.order_date": {
+            "$lte": "2025-12-31T23:59:59"
+          }
+        },
+        {
+          "record.order_date": {
+            "$gte": "2025-01-01T00:00:00"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "DBF2B30F",
+    "planCacheShapeHash": "DBF2B30F",
+    "planCacheKey": "1B0029AD",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "SORT",
+      "sortPattern": {
+        "record.order_date": 1
+      },
+      "memLimit": 104857600,
+      "limitAmount": 10,
+      "type": "simple",
+      "inputStage": {
+        "stage": "COLLSCAN",
+        "filter": {
+          "$and": [
+            {
+              "record.status": {
+                "$eq": "قيد الشحن"
+              }
+            },
+            {
+              "record.order_date": {
+                "$lte": "2025-12-31T23:59:59"
+              }
+            },
+            {
+              "record.order_date": {
+                "$gte": "2025-01-01T00:00:00"
+              }
+            }
+          ]
+        },
+        "nss": "midterm_pipeline.orders_validated",
+        "direction": "forward"
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 10,
+    "executionTimeMillis": 62221,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 27497147,
+    "executionStages": {
+      "isCached": false,
+      "stage": "SORT",
+      "nReturned": 10,
+      "executionTimeMillisEstimate": 58567,
+      "works": 27497159,
+      "advanced": 10,
+      "needTime": 27497148,
+      "needYield": 0,
+      "saveState": 3503,
+      "restoreState": 3503,
+      "isEOF": 1,
+      "sortPattern": {
+        "record.order_date": 1
+      },
+      "memLimit": 104857600,
+      "limitAmount": 10,
+      "type": "simple",
+      "totalDataSizeSorted": 11047,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledRecords": 0,
+      "spilledBytes": 0,
+      "spilledDataStorageSize": 0,
+      "peakTrackedMemBytes": 11227,
+      "inputStage": {
+        "stage": "COLLSCAN",
+        "filter": {
+          "$and": [
+            {
+              "record.status": {
+                "$eq": "قيد الشحن"
+              }
+            },
+            {
+              "record.order_date": {
+                "$lte": "2025-12-31T23:59:59"
+              }
+            },
+            {
+              "record.order_date": {
+                "$gte": "2025-01-01T00:00:00"
+              }
+            }
+          ]
+        },
+        "nReturned": 4584476,
+        "executionTimeMillisEstimate": 51886,
+        "works": 27497148,
+        "advanced": 4584476,
+        "needTime": 22912671,
+        "needYield": 0,
+        "saveState": 3503,
+        "restoreState": 3503,
+        "isEOF": 1,
+        "nss": "midterm_pipeline.orders_validated",
+        "direction": "forward",
+        "docsExamined": 27497147
+      }
+    }
+  },
+  "queryShapeHash": "586654F3E95F836687B63B761BF438E165E9272ABA7E6D4E9813A441D3D34CF7",
+  "command": {
+    "find": "orders_validated",
+    "filter": {
+      "record.status": "قيد الشحن",
+      "record.order_date": {
+        "$gte": "2025-01-01T00:00:00",
+        "$lte": "2025-12-31T23:59:59"
+      }
+    },
+    "sort": {
+      "record.order_date": 1
+    },
+    "limit": 10,
+    "allowDiskUse": true,
+    "$db": "midterm_pipeline"
+  },
+  "serverInfo": {
+    "host": "amr-alzikri",
+    "port": 27017,
+    "version": "8.3.8",
+    "gitVersion": "35e8c8a57f78157ed9fac1a9e90ee6c1818adab6"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0
+}

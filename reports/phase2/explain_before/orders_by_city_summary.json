@@ -1,0 +1,12 @@
+{
+  "query_name": "orders_by_city",
+  "phase": "before_indexes",
+  "nReturned": 10,
+  "executionTimeMillis": 8,
+  "totalKeysExamined": 0,
+  "totalDocsExamined": 114,
+  "winning_plan_stages": [
+    "LIMIT",
+    "COLLSCAN"
+  ]
+}

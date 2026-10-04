@@ -1,0 +1,42 @@
+{
+  "aggregation_name": "payment_methods_summary",
+  "description": "Payment methods and payment status summary.",
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "execution_time_seconds": 433.46,
+  "returned_count": 4,
+  "results": [
+    {
+      "order_count": 9168676,
+      "paid_orders": 4586443,
+      "pending_payment_orders": 4526888,
+      "payment_method": "محفظة إلكترونية",
+      "total_sales": 2387006130500.0,
+      "average_order_value": 260343.6
+    },
+    {
+      "order_count": 9164517,
+      "paid_orders": 4582178,
+      "pending_payment_orders": 4526913,
+      "payment_method": "بطاقة",
+      "total_sales": 2385893910500.0,
+      "average_order_value": 260340.39
+    },
+    {
+      "order_count": 9163948,
+      "paid_orders": 0,
+      "pending_payment_orders": 9053554,
+      "payment_method": "نقدًا عند التسليم",
+      "total_sales": 2388453793500.0,
+      "average_order_value": 260635.9
+    },
+    {
+      "order_count": 6,
+      "paid_orders": 6,
+      "pending_payment_orders": 0,
+      "payment_method": "نقدي",
+      "total_sales": 695000.0,
+      "average_order_value": 115833.33
+    }
+  ]
+}

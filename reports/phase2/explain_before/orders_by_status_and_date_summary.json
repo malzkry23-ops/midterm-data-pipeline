@@ -1,0 +1,12 @@
+{
+  "query_name": "orders_by_status_and_date",
+  "phase": "before_indexes",
+  "nReturned": 10,
+  "executionTimeMillis": 62221,
+  "totalKeysExamined": 0,
+  "totalDocsExamined": 27497147,
+  "winning_plan_stages": [
+    "SORT",
+    "COLLSCAN"
+  ]
+}

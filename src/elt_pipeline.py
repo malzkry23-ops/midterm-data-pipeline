@@ -2,6 +2,7 @@ import sys
 import time
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 from collections import Counter
 from pymongo import MongoClient
@@ -331,7 +332,16 @@ def process_run(run_id):
                         clean_record,
 
                     "corrections":
-                        corrections
+                        corrections,
+
+                    "last_run_id":
+                        run_id,
+
+                    "updated_at":
+                        datetime.now(timezone.utc),
+
+                    "engine_used":
+                        raw_doc.get("engine_used")
                 }
 
                 # -----------------------------------------

@@ -1,0 +1,46 @@
+{
+  "aggregation_name": "orders_by_status",
+  "description": "Order distribution and sales by status.",
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "execution_time_seconds": 2087.29,
+  "returned_count": 6,
+  "results": [
+    {
+      "order_count": 4584476,
+      "status": "قيد الشحن",
+      "total_sales": 1192792650000.0,
+      "average_order_value": 260180.8
+    },
+    {
+      "order_count": 4583696,
+      "status": "قيد الانتظار",
+      "total_sales": 1193962695000.0,
+      "average_order_value": 260480.34
+    },
+    {
+      "order_count": 4583373,
+      "status": "ملغي",
+      "total_sales": 1194412238000.0,
+      "average_order_value": 260596.78
+    },
+    {
+      "order_count": 4582726,
+      "status": "مرتجع",
+      "total_sales": 1193968197000.0,
+      "average_order_value": 260536.68
+    },
+    {
+      "order_count": 4582157,
+      "status": "مؤكد",
+      "total_sales": 1193300013500.0,
+      "average_order_value": 260423.21
+    },
+    {
+      "order_count": 4580719,
+      "status": "تم التسليم",
+      "total_sales": 1192918736000.0,
+      "average_order_value": 260421.72
+    }
+  ]
+}

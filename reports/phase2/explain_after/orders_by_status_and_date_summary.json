@@ -1,0 +1,13 @@
+{
+  "query_name": "orders_by_status_and_date",
+  "phase": "after_indexes",
+  "nReturned": 10,
+  "executionTimeMillis": 10,
+  "totalKeysExamined": 10,
+  "totalDocsExamined": 10,
+  "winning_plan_stages": [
+    "LIMIT",
+    "FETCH",
+    "IXSCAN"
+  ]
+}

@@ -4,5 +4,13 @@ pymongo==4.17.0
 # Apache Spark / PySpark
 pyspark==4.2.0
 
+# FastAPI
+fastapi==0.142.2
+uvicorn==0.54.0
+python-multipart
+
+# Scheduled Jobs
+APScheduler==3.11.3
+
 # Testing
 pytest>=8.0

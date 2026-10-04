@@ -1,0 +1,12 @@
+{
+  "query_name": "orders_by_customer",
+  "phase": "before_indexes",
+  "nReturned": 1,
+  "executionTimeMillis": 55458,
+  "totalKeysExamined": 0,
+  "totalDocsExamined": 27497147,
+  "winning_plan_stages": [
+    "LIMIT",
+    "COLLSCAN"
+  ]
+}

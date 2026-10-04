@@ -1,0 +1,70 @@
+{
+  "aggregation_name": "sales_by_city",
+  "description": "Sales summary grouped by city.",
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "execution_time_seconds": 516.22,
+  "returned_count": 10,
+  "results": [
+    {
+      "order_count": 2750052,
+      "city": "تعز",
+      "total_sales": 717016561000.0,
+      "average_order_value": 260728.36
+    },
+    {
+      "order_count": 2752156,
+      "city": "صنعاء",
+      "total_sales": 716859202000.0,
+      "average_order_value": 260471.86
+    },
+    {
+      "order_count": 2752269,
+      "city": "لحج",
+      "total_sales": 716528025500.0,
+      "average_order_value": 260340.84
+    },
+    {
+      "order_count": 2746793,
+      "city": "حجة",
+      "total_sales": 716247619000.0,
+      "average_order_value": 260757.77
+    },
+    {
+      "order_count": 2749838,
+      "city": "المكلا",
+      "total_sales": 716113225500.0,
+      "average_order_value": 260420.15
+    },
+    {
+      "order_count": 2749031,
+      "city": "إب",
+      "total_sales": 716002448000.0,
+      "average_order_value": 260456.3
+    },
+    {
+      "order_count": 2751123,
+      "city": "عدن",
+      "total_sales": 715940852000.0,
+      "average_order_value": 260235.86
+    },
+    {
+      "order_count": 2749004,
+      "city": "الحديدة",
+      "total_sales": 715659690000.0,
+      "average_order_value": 260334.18
+    },
+    {
+      "order_count": 2749842,
+      "city": "عمران",
+      "total_sales": 715652096000.0,
+      "average_order_value": 260252.08
+    },
+    {
+      "order_count": 2747039,
+      "city": "ذمار",
+      "total_sales": 715334810500.0,
+      "average_order_value": 260402.13
+    }
+  ]
+}

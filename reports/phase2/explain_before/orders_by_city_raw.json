@@ -1,0 +1,105 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "midterm_pipeline.orders_validated",
+    "parsedQuery": {
+      "record.city": {
+        "$eq": "صنعاء"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "9776F81D",
+    "planCacheShapeHash": "9776F81D",
+    "planCacheKey": "1952F3A6",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "LIMIT",
+      "limitAmount": 10,
+      "inputStage": {
+        "stage": "COLLSCAN",
+        "filter": {
+          "record.city": {
+            "$eq": "صنعاء"
+          }
+        },
+        "nss": "midterm_pipeline.orders_validated",
+        "direction": "forward"
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 10,
+    "executionTimeMillis": 8,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 114,
+    "executionStages": {
+      "isCached": false,
+      "stage": "LIMIT",
+      "nReturned": 10,
+      "executionTimeMillisEstimate": 0,
+      "works": 115,
+      "advanced": 10,
+      "needTime": 104,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "limitAmount": 10,
+      "inputStage": {
+        "stage": "COLLSCAN",
+        "filter": {
+          "record.city": {
+            "$eq": "صنعاء"
+          }
+        },
+        "nReturned": 10,
+        "executionTimeMillisEstimate": 0,
+        "works": 114,
+        "advanced": 10,
+        "needTime": 104,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 0,
+        "nss": "midterm_pipeline.orders_validated",
+        "direction": "forward",
+        "docsExamined": 114
+      }
+    }
+  },
+  "queryShapeHash": "92A4EC1E2B3E14541362109CFC9AE18DBD76C73603BBFED79618C8A90E64D162",
+  "command": {
+    "find": "orders_validated",
+    "filter": {
+      "record.city": "صنعاء"
+    },
+    "limit": 10,
+    "$db": "midterm_pipeline"
+  },
+  "serverInfo": {
+    "host": "amr-alzikri",
+    "port": 27017,
+    "version": "8.3.8",
+    "gitVersion": "35e8c8a57f78157ed9fac1a9e90ee6c1818adab6"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0
+}

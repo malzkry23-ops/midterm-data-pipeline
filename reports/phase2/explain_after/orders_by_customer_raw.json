@@ -1,0 +1,152 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "midterm_pipeline.orders_validated",
+    "parsedQuery": {
+      "record.customer_id": {
+        "$eq": "عميل-51"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "EB0A49F5",
+    "planCacheShapeHash": "EB0A49F5",
+    "planCacheKey": "F5F1555F",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "LIMIT",
+      "limitAmount": 10,
+      "inputStage": {
+        "stage": "FETCH",
+        "nss": "midterm_pipeline.orders_validated",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nss": "midterm_pipeline.orders_validated",
+          "keyPattern": {
+            "record.customer_id": 1
+          },
+          "indexName": "idx_customer_id",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "record.customer_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "record.customer_id": [
+              "[\"عميل-51\", \"عميل-51\"]"
+            ]
+          }
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 1,
+    "executionTimeMillis": 1,
+    "totalKeysExamined": 1,
+    "totalDocsExamined": 1,
+    "executionStages": {
+      "isCached": false,
+      "stage": "LIMIT",
+      "nReturned": 1,
+      "executionTimeMillisEstimate": 0,
+      "works": 2,
+      "advanced": 1,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "limitAmount": 10,
+      "inputStage": {
+        "stage": "FETCH",
+        "nReturned": 1,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 1,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "nss": "midterm_pipeline.orders_validated",
+        "docsExamined": 1,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 1,
+          "executionTimeMillisEstimate": 0,
+          "works": 2,
+          "advanced": 1,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "nss": "midterm_pipeline.orders_validated",
+          "keyPattern": {
+            "record.customer_id": 1
+          },
+          "indexName": "idx_customer_id",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "record.customer_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "record.customer_id": [
+              "[\"عميل-51\", \"عميل-51\"]"
+            ]
+          },
+          "keysExamined": 1,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0,
+          "peakTrackedMemBytes": 0
+        }
+      }
+    }
+  },
+  "queryShapeHash": "29CA89319AFD693595EB695A655DDA36704EFF19291D1C9D7B6203D2462F1F60",
+  "command": {
+    "find": "orders_validated",
+    "filter": {
+      "record.customer_id": "عميل-51"
+    },
+    "limit": 10,
+    "$db": "midterm_pipeline"
+  },
+  "serverInfo": {
+    "host": "amr-alzikri",
+    "port": 27017,
+    "version": "8.3.8",
+    "gitVersion": "35e8c8a57f78157ed9fac1a9e90ee6c1818adab6"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0
+}

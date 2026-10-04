@@ -1,0 +1,150 @@
+{
+  "aggregation_name": "top_customers",
+  "description": "Top customers by total purchase value.",
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "execution_time_seconds": 682.01,
+  "returned_count": 20,
+  "results": [
+    {
+      "order_count": 1,
+      "customer_id": "عميل-20714273",
+      "customer_name": "هدى سالم",
+      "total_spent": 2328500.0,
+      "average_order_value": 2328500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-9181955",
+      "customer_name": "يوسف طارق",
+      "total_spent": 2300000.0,
+      "average_order_value": 2300000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-29521677",
+      "customer_name": "محمد علي",
+      "total_spent": 2295500.0,
+      "average_order_value": 2295500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-10997681",
+      "customer_name": "محمد علي",
+      "total_spent": 2294000.0,
+      "average_order_value": 2294000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-15725023",
+      "customer_name": "خالد سالم",
+      "total_spent": 2289500.0,
+      "average_order_value": 2289500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-23250999",
+      "customer_name": "ريم عادل",
+      "total_spent": 2282000.0,
+      "average_order_value": 2282000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-26369928",
+      "customer_name": "خالد سالم",
+      "total_spent": 2279000.0,
+      "average_order_value": 2279000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-28866890",
+      "customer_name": "يوسف طارق",
+      "total_spent": 2277500.0,
+      "average_order_value": 2277500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-4884497",
+      "customer_name": "علي حسين",
+      "total_spent": 2273000.0,
+      "average_order_value": 2273000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-21707399",
+      "customer_name": "هدى سالم",
+      "total_spent": 2273000.0,
+      "average_order_value": 2273000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-17722262",
+      "customer_name": "أروى محمد",
+      "total_spent": 2270000.0,
+      "average_order_value": 2270000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-4034771",
+      "customer_name": "محمد علي",
+      "total_spent": 2264000.0,
+      "average_order_value": 2264000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-15223884",
+      "customer_name": "فاطمة أحمد",
+      "total_spent": 2261000.0,
+      "average_order_value": 2261000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-24380950",
+      "customer_name": "علي حسين",
+      "total_spent": 2259500.0,
+      "average_order_value": 2259500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-28754792",
+      "customer_name": "محمد علي",
+      "total_spent": 2255000.0,
+      "average_order_value": 2255000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-18080213",
+      "customer_name": "أحمد محمد",
+      "total_spent": 2253500.0,
+      "average_order_value": 2253500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-6853020",
+      "customer_name": "يوسف طارق",
+      "total_spent": 2253500.0,
+      "average_order_value": 2253500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-21628977",
+      "customer_name": "فاطمة أحمد",
+      "total_spent": 2253500.0,
+      "average_order_value": 2253500.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-9652840",
+      "customer_name": "يوسف طارق",
+      "total_spent": 2252000.0,
+      "average_order_value": 2252000.0
+    },
+    {
+      "order_count": 1,
+      "customer_id": "عميل-11962637",
+      "customer_name": "خالد سالم",
+      "total_spent": 2252000.0,
+      "average_order_value": 2252000.0
+    }
+  ]
+}

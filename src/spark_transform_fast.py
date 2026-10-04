@@ -32,11 +32,22 @@ VALIDATED_COLLECTION = "orders_validated"
 QUARANTINE_COLLECTION = "quarantine_orders"
 STATS_COLLECTION = "spark_partition_stats"
 
-SPARK_TEMP = r"D:\spark-temp"
+SPARK_TEMP = os.environ.get(
+    "SPARK_TEMP",
+    str(
+        Path(
+            os.environ.get("TEMP")
+            or os.environ.get("TMP")
+            or "."
+        )
+        / "midterm-spark-temp"
+    )
+)
 
 PYTHON_EXECUTABLE = (
-    r"C:\Users\Hp\AppData\Local\Programs\Python"
-    r"\Python313\python.exe"
+    os.environ.get("PYSPARK_PYTHON")
+    or os.environ.get("PYTHON_EXECUTABLE")
+    or sys.executable
 )
 
 BULK_SIZE = 1000

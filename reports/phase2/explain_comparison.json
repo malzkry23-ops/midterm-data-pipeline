@@ -1,0 +1,84 @@
+{
+  "title": "MongoDB Explain Before vs After Indexes",
+  "comparison_count": 3,
+  "comparisons": [
+    {
+      "query_name": "orders_by_city",
+      "index_used": "idx_city",
+      "index_reason": "Index on record.city supports filtering orders by city without collection scanning.",
+      "before": {
+        "executionTimeMillis": 8,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 114,
+        "plan": [
+          "LIMIT",
+          "COLLSCAN"
+        ]
+      },
+      "after": {
+        "executionTimeMillis": 22,
+        "totalKeysExamined": 10,
+        "totalDocsExamined": 10,
+        "plan": [
+          "LIMIT",
+          "FETCH",
+          "IXSCAN"
+        ]
+      },
+      "documents_examined_reduction": 104,
+      "speedup_ratio": 0.36
+    },
+    {
+      "query_name": "orders_by_customer",
+      "index_used": "idx_customer_id",
+      "index_reason": "Index on record.customer_id provides fast lookup of orders for a specific customer.",
+      "before": {
+        "executionTimeMillis": 55458,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 27497147,
+        "plan": [
+          "LIMIT",
+          "COLLSCAN"
+        ]
+      },
+      "after": {
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 1,
+        "totalDocsExamined": 1,
+        "plan": [
+          "LIMIT",
+          "FETCH",
+          "IXSCAN"
+        ]
+      },
+      "documents_examined_reduction": 27497146,
+      "speedup_ratio": 55458.0
+    },
+    {
+      "query_name": "orders_by_status_and_date",
+      "index_used": "idx_status_order_date",
+      "index_reason": "Compound index on record.status and record.order_date supports status filtering, date range filtering, and date sorting.",
+      "before": {
+        "executionTimeMillis": 62221,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 27497147,
+        "plan": [
+          "SORT",
+          "COLLSCAN"
+        ]
+      },
+      "after": {
+        "executionTimeMillis": 10,
+        "totalKeysExamined": 10,
+        "totalDocsExamined": 10,
+        "plan": [
+          "LIMIT",
+          "FETCH",
+          "IXSCAN"
+        ]
+      },
+      "documents_examined_reduction": 27497137,
+      "speedup_ratio": 6222.1
+    }
+  ]
+}

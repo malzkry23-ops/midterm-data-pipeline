@@ -1,0 +1,46 @@
+{
+  "aggregation_name": "sales_by_month",
+  "description": "Monthly sales and order summary.",
+  "database": "midterm_pipeline",
+  "collection": "orders_validated",
+  "execution_time_seconds": 407.25,
+  "returned_count": 6,
+  "results": [
+    {
+      "order_count": 7016670,
+      "month": "2025-01",
+      "total_sales": 1826768361000.0,
+      "average_order_value": 260346.91
+    },
+    {
+      "order_count": 6420893,
+      "month": "2025-02",
+      "total_sales": 1673491712500.0,
+      "average_order_value": 260632.24
+    },
+    {
+      "order_count": 7100565,
+      "month": "2025-03",
+      "total_sales": 1848800859500.0,
+      "average_order_value": 260373.77
+    },
+    {
+      "order_count": 6872727,
+      "month": "2025-04",
+      "total_sales": 1789857431000.0,
+      "average_order_value": 260429.0
+    },
+    {
+      "order_count": 86291,
+      "month": "2025-05",
+      "total_sales": 22436082500.0,
+      "average_order_value": 260004.9
+    },
+    {
+      "order_count": 1,
+      "month": "2025-06",
+      "total_sales": 83000.0,
+      "average_order_value": 83000.0
+    }
+  ]
+}
